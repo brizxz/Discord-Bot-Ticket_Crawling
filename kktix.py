@@ -3,6 +3,9 @@ from bs4 import BeautifulSoup
 import json
 import re
 import time
+import subprocess
+
+from const.kktix import *
 
 def check_ticket_availability(url):
     response = requests.get(url)
@@ -18,6 +21,8 @@ def check_ticket_availability(url):
 
             if register_status == "OUT_OF_STOCK":
                 return "很抱歉，這個活動目前無法購買。"
+            elif register_status == "SOLD_OUT":
+                return "很抱歉，這個活動已經售完。" 
             else:
                 return "這個活動目前還可以購買。"
         else:
@@ -25,11 +30,20 @@ def check_ticket_availability(url):
     else:
         return "找不到 inventory 數據。"
 
-url = "https://kktix.com/events/84607d15/registrations/new"
+def send_notification(event_name):
+    try:
+        subprocess.run(['notify-send', '票務通知', f'{event_name} 現在有票可以購買！'])
+    except FileNotFoundError:
+        print(f"無法發送通知：{event_name} 現在有票可以購買！")
+
 
 while True:
-    result = check_ticket_availability(url)
-    print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {result}")
+    for event_name, url in KKTIX_URL.items():
+        print(f"檢查活動: {event_name}")
+        result = check_ticket_availability(url)
+        print(f"{time.strftime('%Y-%m-%d %H:%M:%S')} - {result}")
+        
+        if result == "這個活動目前還可以購買。":
+            send_notification(event_name)
+    
     time.sleep(10)
-
-# ... existing code ...
