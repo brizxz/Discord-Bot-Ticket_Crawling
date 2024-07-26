@@ -37,6 +37,7 @@ def send_notification(event_name):
         print(f"無法發送通知：{event_name} 現在有票可以購買！")
 
 
+
 while True:
     for event_name, url in KKTIX_URL.items():
         print(f"檢查活動: {event_name}")
