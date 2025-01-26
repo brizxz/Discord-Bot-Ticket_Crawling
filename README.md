@@ -1,2 +1,4 @@
 # Ticket_Crawling
-## 這個專案主要爬取kktix和拓元的資料以了解是否有活動放票
+The project currently support tixcraft and kktix ticket information through discord bot
+## Use method
+Replace the token with yout discord bot token and replace the channel with your target channel
