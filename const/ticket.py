@@ -1,2 +1,1 @@
-TICKET_URL = {"Aespa":"https://tixcraft.com/activity/game/24_aespa"}
-TICKET_URL1 = {"Dua lipa":"https://tixcraft.com/activity/game/24_dualipa"}
+TICKET_URL1 = {"amei":"https://tixcraft.com/activity/game/25_bnd"}
