@@ -1,1 +1,2 @@
-KKTIX_URL = { "gidle 10/4":"https://kktix.com/events/infinite-15th-anniversary-concert-hk/registrations/new"}
+KKTIX_URL = {"jj607":"https://kktix.com/events/2925737b/registrations/new",  
+               "jj608":"https://kktix.com/events/813b9103/registrations/new"}
