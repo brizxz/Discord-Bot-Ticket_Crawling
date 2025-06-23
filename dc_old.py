@@ -1,3 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+原始的 Discord Bot 程式碼 (已重構)
+
+此檔案保留作為參考，新的模組化程式碼位於：
+- bot/discord_bot.py - 主要 Bot 邏輯
+- crawlers/ - 各平台爬蟲實現
+- config/settings.py - 配置管理
+
+使用方法：
+python main.py
+"""
+
+# 原始程式碼已移動到新的模組化結構中
+# 請使用 main.py 來啟動程式
+
 import discord
 import asyncio
 import requests
@@ -411,4 +427,8 @@ async def main():
     async with bot:
         await bot.start(TOKEN)
 
-asyncio.run(main())
+# 注意：此檔案已不再使用，請使用 python main.py 啟動新版本
+if __name__ == "__main__":
+    print("此版本已過時，請使用以下指令啟動新版本：")
+    print("python main.py")
+    print("或參考 README.md 進行設定")

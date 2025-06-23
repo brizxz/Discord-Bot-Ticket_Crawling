@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 
 import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import requests
 import time
 from bs4 import BeautifulSoup
@@ -223,4 +226,4 @@ def main():
         print("="*50)
 
 if __name__ == "__main__":
-    main() 
+    main()

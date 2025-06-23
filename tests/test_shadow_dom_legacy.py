@@ -3,6 +3,9 @@
 
 import time
 import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -256,4 +259,4 @@ def main():
         print(f"{'='*50}")
 
 if __name__ == "__main__":
-    main() 
+    main()
